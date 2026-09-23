@@ -1358,7 +1358,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1561243620}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1418,10 +1418,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1561243620}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f2ab57dbba4f43429b7b11f8e85cd02, type: 3}
+  m_Script: {fileID: 11500000, guid: 882a5f1d600fa0445af3b3e7c74bcf59, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MouseLook
-  sensibilidade: 0.2
+  m_EditorClassIdentifier: Assembly-CSharp::CameraFollow
+  player: {fileID: 1837211875}
+  distance: 6
+  height: 2
+  mouseSensitivity: 1
+  minVerticalAngle: -30
+  maxVerticalAngle: 60
 --- !u!1 &1657693943
 GameObject:
   m_ObjectHideFlags: 0
@@ -1548,9 +1553,9 @@ GameObject:
   - component: {fileID: 1837211874}
   - component: {fileID: 1837211873}
   - component: {fileID: 1837211872}
-  - component: {fileID: 1837211871}
   - component: {fileID: 1837211876}
   - component: {fileID: 1837211877}
+  - component: {fileID: 1837211878}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Untagged
@@ -1558,19 +1563,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1837211871
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1837211870}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f234a6779e3b06940ab33199dcf1af98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerMove
-  rb: {fileID: 1837211876}
 --- !u!136 &1837211872
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1705,11 +1697,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1837211870}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 065928943c4bdc348b97e13dd1d70e67, type: 3}
+  m_Script: {fileID: 11500000, guid: f234a6779e3b06940ab33199dcf1af98, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CameraController
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMove
+  speed: 5
+  rb: {fileID: 1837211876}
+--- !u!114 &1837211878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837211870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e3ad4c5a6b2fa644b86af2ccfc10316, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerLook
+  sensibilidade: 50
   cameraTransform: {fileID: 1561243623}
-  sensibilidade: 0.2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
